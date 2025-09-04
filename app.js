@@ -2,9 +2,20 @@ let listaAmigos = [];
 
 function adicionarAmigo() {
     if (validarInput()) {
-        listaAmigos.push(document.getElementById('amigo').value);
+        listaAmigos.push(document.getElementById('amigo').value.trim());
         limparCampo();
-        console.log(listaAmigos);
+        listarAmigosAdicionados();
+        console.log(listaAmigos); //Para testes de validações.
+    }
+}
+
+function listarAmigosAdicionados() {
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';
+
+    for (let i = 0; i < listaAmigos.length; i++) {
+        let item = `<li>${listaAmigos[i]}</li>`;
+        lista.innerHTML += item;
     }
 }
 
