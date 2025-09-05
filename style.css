@@ -1,11 +1,21 @@
 :root {
     --color-primary: #4B69FD;
     --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
+    --color-tertiary: #b9b9b9;
     --color-button: #fe652b;
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+}
+
+@font-face {
+  font-family: 'Epunda Slab';
+  src: url('./fonts/EpundaSlab-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  src: url('./fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
 }
 
 /* Estilos gerais */
@@ -62,7 +72,7 @@ body {
 }
 
 .section-title {
-    font-family: "Inter", serif;
+    font-family: "M PLUS Rounded 1c", serif;
     font-size: 36px;
     font-weight: 700;
     color: var(--color-primary);
@@ -100,14 +110,14 @@ body {
     border: 2px solid #333;
     border-right: none;
     border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
+    font-family: "M PLUS Rounded 1c", serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos de botão */
 button {
     padding: 15px 30px;
-    font-family: "Inter", sans-serif;
+    font-family: "Epunda Slab", sans-serif;
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 25px;
@@ -117,7 +127,7 @@ button {
 
 .button-add {
     background-color: var(--color-tertiary);
-    color: var(--color-text);
+    color: #000000;
     border-radius: 0 25px 25px 0;
 }
 
@@ -129,7 +139,7 @@ button {
 ul {
     list-style-type: none;
     color: var(--color-text);
-    font-family: "Inter", sans-serif;
+    font-family: "Epunda Slab", sans-serif;
     font-size: 18px;
     margin: 20px 0;
 }
@@ -147,7 +157,7 @@ ul {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 40px;
+    padding: 10px 60px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
@@ -159,4 +169,24 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+
+.button-reset{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: #aa2222;
+    font-size: 16px;
+}
+
+.button-reset:hover{
+    background-color: #7e1b1b;
+}
+
+.button-container{
+    display: flex;
+    gap: 20px;
 }

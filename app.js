@@ -25,8 +25,7 @@ function sortearAmigo() {
         alert('Não há nomes adicionados para o sorteio!\nTente novamente.');
     } else {
         let amigoSorteado = Math.floor(Math.random() * quantidadeAmigos);
-        let escolha = document.getElementById('listaAmigos');
-        escolha.innerHTML = '';
+        let escolha = document.getElementById('resultado');
         escolha.innerHTML = listaAmigos[amigoSorteado];
     }
 }
