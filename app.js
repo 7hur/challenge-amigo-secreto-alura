@@ -3,7 +3,7 @@ let listaAmigos = [];
 function adicionarAmigo() {
     if (validarInput()) {
         listaAmigos.push(document.getElementById('amigo').value.trim());
-        limparCampo();
+        limparCampo('amigo');
         listarAmigosAdicionados();
         console.log(listaAmigos); //Para testes de validações.
     }
@@ -19,17 +19,30 @@ function listarAmigosAdicionados() {
     }
 }
 
+function sortearAmigo() {
+    let quantidadeAmigos = listaAmigos.length;
+    if (quantidadeAmigos === 0) {
+        alert('Não há nomes adicionados para o sorteio!\nTente novamente.');
+    } else {
+        let amigoSorteado = Math.floor(Math.random() * quantidadeAmigos);
+        let escolha = document.getElementById('listaAmigos');
+        escolha.innerHTML = '';
+        escolha.innerHTML = listaAmigos[amigoSorteado];
+    }
+}
+
+
 function validarInput() {
     let input = document.getElementById('amigo').value.trim();
     if (input === '') {
         alert('Por favor, preencha o campo com um nome válido.');
-        limparCampo()
+        limparCampo('amigo');
         return false;
     }
     return true;
 }
 
-function limparCampo() {
-    let limpeza = document.getElementById('amigo');
+function limparCampo(tag) {
+    let limpeza = document.getElementById(tag);
     limpeza.value = '';
 }
